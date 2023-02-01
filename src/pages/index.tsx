@@ -2,6 +2,8 @@ import Head from 'next/head'
 import {Inter} from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 import Banner from "@/components/Banner";
+import Image from "next/image";
+import Card from "@/components/Card";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,6 +22,24 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <Banner buttonTitle={'View stores nearby'} handleButtonClick={handleBannerButtonClick}/>
+
+        <div className={styles.heroImage}>
+          <Image
+            src={'/static/hero.png'} alt={'hero img'}
+            width={700}
+            height={400}
+          />
+        </div>
+
+
+        <div className={styles.cardLayout}>
+          <Card
+            href={'/coffee-store/darkhorse-coffee'}
+            imgURL={'/static/hero.png'}
+            title={'DarkHorse Coffee'}
+          />
+        </div>
+
       </main>
     </>
   )
